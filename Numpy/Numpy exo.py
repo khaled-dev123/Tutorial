@@ -46,13 +46,46 @@ print("Read-only Array:\n", read_only_array)
 # 2. Indexing & Selection
 # -----------------------------
 # Replace NumPy array elements that don’t satisfy a given condition
+array = np.array([1, 2, 3, 4, 5, 6])
+array[array < 3] = 0
+print("Modified Array:\n", array)
+
 # Return the indices of elements where the condition is satisfied
+indices = np.where(array > 3)
+print("Indices where condition is satisfied:\n", indices)
+
 # Replace NaN values with average of columns
+array_with_nan = np.array([[1, 2, np.nan], [4, np.nan, 6], [7, 8, 9]])
+col_mean = np.nanmean(array_with_nan, axis=0)
+inds = np.where(np.isnan(array_with_nan))
+array_with_nan[inds] = np.take(col_mean, inds[1])
+print("Array after replacing NaN with column mean:\n", array_with_nan)
+
 # Replace negative values with zero in NumPy array
+array_with_neg = np.array([-1, 2, -3, 4, -5])
+array_with_neg[array_with_neg < 0] = 0
+print("Array after replacing negative values with zero:\n", array_with_neg)
+
 # How to get values of a NumPy array at certain index positions?
+array = np.array([10, 20, 30, 40, 50])
+indices = [1, 3]
+values = array[indices]
+print("Values at certain index positions:\n", values)
+
 # Find indices of elements equal to zero in a NumPy array
+array_with_zeros = np.array([0, 1, 2, 0, 3, 0])
+zero_indices = np.where(array_with_zeros == 0)[0]
+print("Indices of elements equal to zero:\n", zero_indices)
+
+
 # Access different rows of a multidimensional NumPy array
+array_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+second_row = array_2d[1, :]
+print("Second row of the array:\n", second_row)
+
 # Get row numbers of NumPy array having element larger than X
+row_indices = np.where(array_2d > 5)[0]
+print("Row numbers with elements larger than 5:\n", row_indices)
 
 # -----------------------------
 # 3. Array Operations
