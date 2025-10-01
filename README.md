@@ -7,7 +7,7 @@
 
 ## 📂 Contents  
 - 🔢 **NumPy** → Arrays, ufuncs, random numbers, and linear algebra  
-- 🗂️ **Pandas** → *(coming soon)* Data analysis with Series and DataFrames  
+- 🗂️ **Pandas** →  Data analysis with Series and DataFrames  
 - 📊 **Matplotlib** → *(coming soon)* Data visualization with plots and charts  
 - 🤖 **Machine Learning** → *(coming soon)* Basics of ML with scikit-learn and NumPy  
 
