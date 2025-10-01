@@ -1,7 +1,7 @@
 # 📘 Tutorials Repository  
 
 > A collection of programming and data science tutorials with simple explanations,  
-> code examples, and exercises. Made for **self-learning** and **sharing knowledge**. 🚀  
+> code examples, and exercises. Made for **self-learning** and **sharing knowledge** 🚀  
 
 ---
 
