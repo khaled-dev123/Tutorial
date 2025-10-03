@@ -1,18 +1,47 @@
+import pandas as pd
+
 # 1. DataFrame Creation & Construction
-# Goal: Learn all ways to create a DataFrame and manipulate its structure.
-# ✅ Must-Do Exercises:
 # Make a DataFrame from a two-dimensional list.
+data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+df = pd.DataFrame(data, columns=['A', 'B', 'C'])
+print("DataFrame from 2D list:\n", df)
+
 # Create a DataFrame from a dict of lists/arrays.
+data_dict = {'A': [1, 4, 7], 'B': [2, 5, 8], 'C': [3, 6, 9]}
+df_dict = pd.DataFrame(data_dict)
+print("\nDataFrame from dict of lists:\n", df_dict)
+
 # Create a DataFrame from a list of dicts.
+data_list_of_dicts = [{'A': 1, 'B': 2}, {'A': 4, 'B': 5, 'C': 6}, {'A': 7, 'C': 9}]
+df_list_of_dicts = pd.DataFrame(data_list_of_dicts)
+print("\nDataFrame from list of dicts:\n", df_list_of_dicts)
+
 # Construct a DataFrame from list of tuples.
+data_tuples = [(1, 2), (3, 4), (5, 6)]
+df_tuples = pd.DataFrame(data_tuples, columns=['A', 'B'])
+print("\nDataFrame from list of tuples:\n", df_tuples)
+
 # Convert list of nested dictionaries into a DataFrame.
+data_nested_dicts = [{'A': {'a': 1, 'b': 2}}, {'A': {'a': 3, 'b': 4}}, {'A': {'a': 5, 'b': 6}}]
+df_nested_dicts = pd.json_normalize(data_nested_dicts)
+print("\nDataFrame from nested dicts:\n", df_nested_dicts)
+
 # Create a DataFrame from Pandas Series.
+data_series = {'A': pd.Series([1, 2, 3]), 'B': pd.Series([4, 5, 6])}
+df_series = pd.DataFrame(data_series)
+print("\nDataFrame from Pandas Series:\n", df_series)
+
 # Construct a DataFrame from string data and clean string values.
+data_string = {'A': ['  foo ', ' bar', 'baz  '], 'B': ['  one', 'two ', ' three ']}
+df_string = pd.DataFrame(data_string)
+df_string = df_string.applymap(lambda x: x.strip())
+print("\nDataFrame from string data (cleaned):\n", df_string)
+
 # These cover almost all possible ways to create a DataFrame.
+df.info()
 
 # 2. DataFrame Indexing & Reindexing
-# Goal: Understand row/column access and reshaping.
-# ✅ Must-Do Exercises:
+
 # Reindexing in Pandas DataFrame.
 # Reset Index in Pandas DataFrame.
 # Change column names and row indexes.
@@ -21,8 +50,6 @@
 # Mastering these ensures you can organize, reshape, and map your data effectively.
 
 # 3. DataFrame Row Operations
-# Goal: Master row selection, iteration, and modification.
-# ✅ Must-Do Exercises:
 # Select rows based on conditions.
 # Use iloc[] and iat[] for row selection.
 # Drop rows based on a condition.
@@ -33,8 +60,6 @@
 # These exercises cover almost all row-level manipulations you will need.
 
 # 4. DataFrame Column Operations
-# Goal: Manipulate, analyze, and transform columns.
-# ✅ Must-Do Exercises:
 # Create new columns (from existing columns, loops, or conditions).
 # Rename columns and lowercase/uppercase/capitalize column names.
 # Get unique values from a column.
@@ -48,8 +73,6 @@
 # Column manipulation is one of the most used skills in real-world Pandas tasks.
 
 # 5. DataFrame Cleaning
-# Goal: Prepare clean data for analysis.
-# ✅ Must-Do Exercises:
 # Remove or fill empty cells (dropna, fillna).
 # Fix wrong data formats (astype).
 # Fix wrong data using apply() and conditions.
@@ -58,8 +81,6 @@
 # This ensures your datasets are analysis-ready.
 
 # 6. Pandas Series
-# Goal: Work efficiently with 1D data.
-# ✅ Must-Do Exercises:
 # Create a Series from arrays, lists, or dictionaries.
 # Create a Series using NumPy functions.
 # Access elements by index, label, or slicing.
@@ -67,16 +88,12 @@
 # Mastering Series helps you work with single columns efficiently.
 
 # 7. Pandas Date & Time
-# Goal: Handle time-series data effectively.
-# ✅ Must-Do Exercises:
 # Convert string columns to datetime (pd.to_datetime).
 # Work with Timedelta and Period for date/time calculations.
 # Manipulate time-series indexes for analysis.
 # Date and time operations are critical for finance, analytics, and sensor data.
 
 # 8. Analyzing DataFrames
-# Goal: Quickly explore datasets for insights.
-# ✅ Must-Do Exercises:
 # Use head() and tail() to preview data.
 # Use info() to check data types and null values.
 # Use describe() for quick statistics.
